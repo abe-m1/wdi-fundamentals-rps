@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////
 /*   Provided Code - Please Don't Edit   */
 ////////////////////////////////////////////////
-'use strict';
+//'use strict';
 
 function getInput() {
     console.log("Please choose either 'rock', 'paper', or 'scissors'.")
@@ -17,6 +17,8 @@ function randomPlay() {
         return "scissors";
     }
 }
+
+// question, just to clarify if there is no variable in the parenthesis of a function?
 ////////////////////////////////////////////////
 /*           Write Your Code Below            */
 ////////////////////////////////////////////////
@@ -25,62 +27,103 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    return move = move || getInput();
-}
-}
+    
+    
+ return move || getInput()  
+ 
+
+
+    
+} // end playermove
 
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    return move = move || randomPlay();
+    return move || randomPlay() 
+    
 }
+    
 
 function getWinner(playerMove,computerMove) {
     var winner;
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
-    if computerMove === playerMove {
-winner = “tie”;
-}
-    else if )computerMove === ‘rock’ %% playerMove === ‘scissors’)
+    
+    if (computerMove === playerMove) {
+winner = "tie";
 
-{winner = ‘computer’
 }
-    else if (computerMove === ‘paper’ && playerMove === ‘rock’)
+    else if (computerMove === "rock" && playerMove === "scissors")
 
-{winner = ‘computer’
+{winner = "computer";
+}
+    else if (computerMove === "paper" && playerMove === "rock")
+
+{winner = "computer";
 
  }
-    else if (computerMove === ‘scissors’ && playerMove === ‘paper’)
+    else if (computerMove === "scissors" && playerMove === "paper")
 
-{winner = ‘computer’
-
-}
-    else if (playerMove === ‘rock’ %% playerMove === ‘scissors’)
-
-{winner = ‘player’
+{winner = "computer";
 
 }
-else if (computerMove === ‘paper’ && playerMove === ‘rock’)
+    else if (playerMove === "rock" && computerMove === "scissors")
 
-{winner = ‘player’
+{winner = "player";
+
 }
-else if (computerMove === ‘scissors’ && playerMove === ‘paper’)
+else if (computerMove === "paper" && playerMove === "rock")
 
-{winner = ‘player’
+{winner = "player";
+}
+else if (computerMove === "scissors" && playerMove === "paper")
+
+{winner = "computer";
 }
 
     return winner;
+
 }
+
+
 
 function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
-    // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
-    return [playerWins, computerWins];
+    var winner = getWinner(playerMove, computerMove)
+    
+    
+
+     while (playerWins <5 && computerWins <5) {
+        var playerMove = getPlayerMove();
+        var computerMove = getComputerMove();
+        var winner = getWinner(playerMove, computerMove);
+        if (winner === "player"){
+            playerWins+=1;
+            console.log ("you just got one more win" + playerWins);
+        }
+    else if (winner === "computer")
+        {  computerWins+=1;
+        console.log("the computer just got another win" + computerWins);
+
+        }
+     
+console.log("Player chose " + playerMove + " while Computer chose " + computerMove);
+  console.log("The score is currently " + playerWins + " to " + computerWins + "\n");
+   
+
+
+}
+
+    return [playerWins, computerWins]
+}
+
+playToFive()
+// Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
+// I think i need to use a while statement here 
+
 }
 
