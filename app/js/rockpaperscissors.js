@@ -3,6 +3,9 @@
 ////////////////////////////////////////////////
 //'use strict';
 
+alert("hello world")
+
+
 function getInput() {
     console.log("Please choose either 'rock', 'paper', or 'scissors'.")
     return prompt();
